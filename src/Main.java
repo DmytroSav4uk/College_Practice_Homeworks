@@ -1,77 +1,49 @@
 //13 Дмитро Савчук
-import java.util.Scanner;
-class SetValues {
-    double x, y, z;
-    public void Scan(){
-        Scanner scn = new Scanner(System.in);
-        System.out.println("Enter X value");
-        x = scn.nextDouble();
-        System.out.println("Enter Y value");
-        y = scn.nextDouble();
-        System.out.println("Enter Z value");
-        z = scn.nextDouble();
-    }
-}
-public class Main{
-    public static void main (String[] args) {
-        double f ;
-        SetValues value = new SetValues();
-        value.Scan();
 
-        double res = (value.x >= value.z)? Math.sqrt(1 + Math.pow(value.x-2,2)):
-
-                Math.pow(Math.tan(value.z),2) + 1;
-        f=res;
-
-         System.out.println("Result is: "+f);
+public class Main {
+    public static void main(String[] args) {
+        double a, b, step, xk, x;
+        int counter = 0;
+        a = 0.9;
+        b = 0.66;
+        step = 0.55;
+        x = 13;
+        xk = 8.9;
+        for (double xn = 2.3; xn <= xk; xn = xn + step) {
+            counter++;
+            double ydo1 = Math.pow(Math.log(a + Math.sqrt(x)), 2);
+            double ydo2 = 1 +Math.cos(b*x);
+            double y = ydo1 / ydo2;
+            System.out.println("x=" + xn + "|y =" + y);
+        }
+        System.out.println("_______________________");
+        System.out.println("number of function values is" + counter);
     }
 }
 
 
-//class SetValues {
-//
-//    int a, b, c, d;
-//
-//    public void Scan() {
-//        Scanner scn = new Scanner(System.in);
-//        System.out.println("Enter value of A");
-//        a = scn.nextInt();
-//        System.out.println("Enter value of B");
-//        b = scn.nextInt();
-//        System.out.println("Enter value of C");
-//        c = scn.nextInt();
-//        System.out.println("Enter value of D");
-//        d = scn.nextInt();
-//    }
-//}
-//
-//
+
 //public class Main {
-//
 //    public static void main(String[] args) {
-//        int y, z;
+//        double a, b,y=0,step,step1,k;
+//        int counter = 0;
+//        k=10;
+//        a = 0.1;
+//        b = 1;
+//        step1 = (b-a);
+//        step = step1/k;
+//        for (double x = 0.1; x <= b; x = x + step) {
+//            counter++;
+//            y = 0.5 * Math.log(x);
+//            System.out.println("x=" + x + "|y =" + y);
 //
-//        SetValues value = new SetValues();
-//        value.Scan();
-//        y = value.a * value.b - value.c * value.d;
-//        switch (y) {
-//            case (3) -> {
-//                z = 2 * value.a;
-//                System.out.println("y = " + y + "|z =" + z);
-//            }
-//            case (5) -> {
-//                z = 7 - value.b;
-//                System.out.println("y = " + y + "|z =" + z);
-//            }
-//            case (7) -> {
-//                z = 8 + value.c;
-//                System.out.println("y = " + y + "|z =" + z);
-//            }
-//            case (19) -> {
-//                z = 10 + value.d * value.a;
-//                System.out.println("y = " + y + "|z =" + z);
-//            }
-//            default -> System.out.println("Y is not equal 3,5,7 or 19");
-//        }
+//
+//
 //    }
-//}
+//        System.out.println("_______________________");
+//        System.out.println("number of function values is: " + counter);
+//        double lastDigit = y % 10;
+//        int digits = (int)Math.log10(y);
+//        int firstDigit = (int)(y / Math.pow(10, digits));
+//        System.out.println("product of first and last number:"+lastDigit * firstDigit) ;
+//}}
