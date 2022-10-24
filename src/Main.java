@@ -1,41 +1,31 @@
-//public class Main {
-//    public static void main(String[] args) {
-//        int[][] twoD = new int[5] [2];
-//        int i, j, k = 0;
-//        System.out.println("2 task:");
-//        for(i=0;i <5; i++)
-//        for (j=0;j <2; j++){
-//            twoD[i] [j] = k < 25? k+10: k;
-//
-//            k++;
-//            if (twoD [i] [j] < 3){
-//                System.out.println(twoD[i] [j] + " ");
-//            }
-//        }
-//        System.out.println("3 task:");
-//        for(i=0; i<5; i++) {
-//            for (j=0; j<2; j++)
-//            System.out.print( twoD[i] [j] +" ");
-//            System.out. println();
-//        }
-//    }
-//}
+import javax.swing.*;
+import java.awt.*;
+
+public class Main extends JFrame {
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setFont(new Font("Courier New", Font.PLAIN, 50));
+        g.drawString("Савчук Дмитро", 200, 200);
+
+        g.drawLine(20, 20, 20, 100);
+        g.drawLine(20, 20, 50, 60);
+        g.drawLine(50, 60, 80, 20);
+        g.drawLine(80, 20, 80, 100);
 
 
-public class Main {
-    public static void main(String[] args) {
-
-
-        double p, u = 15, x =42;
-        p = pValue(u, x);
-
-        double do1= p/ 2*Math.sin(x) ;
-        double do2=p/2*Math.cos(x) ;
-        double z = do1 - do2;
-        System.out.println("result is:"+z);
-
+        g.drawPolygon(new int[] {200, 200, 300}, new int[] {400, 200, 400}, 3);
     }
-    private static double pValue(double u, double x){
-        return Math.pow(Math.log(u * x - 1), 2);
+
+    public static void main(String[] args) {
+        new Main();
+    }
+
+    public Main() {
+        super("Test");
+        JFrame.setDefaultLookAndFeelDecorated(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        pack();
+        setSize(800, 600);
+        setVisible(true);
     }
 }
