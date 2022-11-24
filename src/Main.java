@@ -1,48 +1,51 @@
+//Скласти програму обчислення функцій, використовуючи оператори керування.
+
+
 public class Main {
     public static void main(String[] args) {
 
-//        int  x, y;
-//        double f;
-//
-//        y = 12;
-//        x = 12;
-//
-//        if (x >= y){
-//            f=1+Math.pow(x,2)+Math.sqrt(Math.abs(y/3));
-//            System.out.println("1'st F =" + f);
-//        }
-//
-//        if (x<y){
-//            f =x*Math.tan(y);
-//            System.out.println("2'nd F =" + f);
-//        }
+        double x,y,z;
+
+        y = 15;
+        x = 11;
+        z = 34;
 
 
-int[] arr = {1,2,3,4,5,6,7,8,9};
 
-        int max=0;
-        int min =1;
-        int imax = 0;
-        int imin = 1;
-        for (int j : arr) System.out.print(j + " ");
-        System.out.println();
-        for(int i=1; i<arr.length; i++){
-            if(arr[i]>max){
-                max=arr[i];
-                imax=i;
-            }
-            if(arr[i]<min){
-                min=arr[i];
-                imin = i;
-            }
+        if (x >= z){
+           double f = Math.cos(y+3);
+           System.out.println("x >=z| f ="+f);
         }
-        arr[imin] =max; arr[imax] = min;
-        for (int j : arr) System.out.print(j + " ");
-        System.out.println();
-        System.out.println(max);
-        System.out.println(min);
+
+        else {
+            double f = x+ Math.atan(Math.pow(Math.sqrt(z),3));
+            System.out.println("x < z| f ="+f);
+        }
 
 
     }
 }
 
+
+ class Task2 {
+    public static void main(String[] args) {
+
+     double arr[] = {-1,-2,-3,1,2,3,4,5,6};
+
+     int sum = 0;
+     int product = 1;
+
+        for (double arrElement : arr) {
+
+            if (arrElement<0){
+                sum += Math.abs(arrElement);
+            }
+
+            if (arrElement>0){
+                product*=arrElement;
+            }
+        }
+        int res = product - sum;
+        System.out.println("result of second task is: "+ res);
+    }
+}
